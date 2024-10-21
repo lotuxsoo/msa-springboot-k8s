@@ -1,0 +1,13 @@
+spring:
+  rabbitmq:
+    host: my-rabbitmq  # Kubernetes에서의 RabbitMQ 서비스 이름
+    port: 5672
+    username: user  # Helm 설치 시 생성된 기본 사용자 이름
+    password: nRrTCBnMRmwcrF5z  # Helm 설치 시 생성된 기본 비밀번호
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.108.69.72:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true

@@ -66,8 +66,6 @@
 │   ├── build.gradle
 │   ├── settings.gradle
 └── common
-    ├── config
-    │   └── application-common.yml
-    ├── libs
+    ├── application-common.yml
     └── README.md
 ```
