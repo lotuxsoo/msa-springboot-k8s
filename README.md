@@ -1,83 +1,35 @@
 ## 프로젝트 구조
 ```
 .
-├── application-common.yml        # 모든 서비스가 참조하는 공통 설정 파일
-├── README.md
-├── k8s                           # Kubernetes 관련 파일
-│   ├── api-gateway
-│   │   ├── api-gateway-deployment.yml
-│   │   └── api-gateway-service.yml
-│   ├── eureka-server
-│   │   ├── eureka-server-deployment.yml
-│   │   └── eureka-server-service.yml
+├── k8s                       # Kubernetes 관련 파일
 │   ├── ingress
-│   │   └── msa-ingress.yml
+│   │   └── msa-ingress.yml    # Ingress 정의
 │   ├── order-service
-│   │   ├── order-service-deployment.yml
-│   │   └── order-service.yml
-│   └── payment-service
-│       ├── payment-service-deployment.yml
-│       └── payment-service.yml
-├── msa-api-gateway
+│   │   ├── order-service-deployment.yml   # Order Service의 Deployment 정의
+│   │   └── order-service-service.yml      # Order Service의 Service 정의
+│   ├── payment-service
+│   │   ├── payment-service-deployment.yml # Payment Service의 Deployment 정의
+│   │   └── payment-service-service.yml    # Payment Service의 Service 정의
+├── msa-order-service          # Order Service 코드와 설정
 │   ├── Dockerfile
 │   ├── build.gradle
-│   ├── gradlew
-│   ├── gradlew.bat
-│   ├── settings.gradle
-│   └── src
-│       ├── main
-│       │   ├── java
-│       │   │   └── hello
-│       │   │       └── msa_api_gateway
-│       │   │           └── MsaApiGatewayApplication.java
-│       │   └── resources
-│       │       └── application.yml  # 공통 설정 파일 참조
-├── msa-eureka-server
+│   ├── src
+│   │   └── main
+│   │       ├── java
+│   │       │   └── hello
+│   │       │       └── order_service
+│   │       └── resources
+│   │           └── application.yml
+├── msa-payment-service        # Payment Service 코드와 설정
 │   ├── Dockerfile
 │   ├── build.gradle
-│   ├── gradlew
-│   ├── gradlew.bat
-│   ├── settings.gradle
-│   └── src
-│       ├── main
-│       │   ├── java
-│       │   │   └── hello
-│       │   │       └── msa_eureka_server
-│       │   │           └── MsaEurekaServerApplication.java
-│       └── resources
-│           └── application.yml  # 공통 설정 파일 참조
-├── msa-order-service
-│   ├── Dockerfile
-│   ├── build.gradle
-│   ├── gradlew
-│   ├── gradlew.bat
-│   ├── settings.gradle
-│   └── src
-│       ├── main
-│       │   ├── java
-│       │   │   └── hello
-│       │   │       └── msa_demo_2
-│       │   │           ├── MsaDemo2Application.java
-│       │   │           ├── OrderController.java
-│       │   │           ├── OrderService.java
-│       │   │           └── RabbitMQConfig.java
-│       └── resources
-│           └── application.yml  # 공통 설정 파일 참조
-├── msa-payment-service
-│   ├── Dockerfile
-│   ├── build.gradle
-│   ├── gradlew
-│   ├── gradlew.bat
-│   ├── settings.gradle
-│   └── src
-│       ├── main
-│       │   ├── java
-│       │   │   └── hello
-│       │   │       └── msa_demo_1
-│       │   │           ├── MsaDemo1Application.java
-│       │   │           ├── PaymentController.java
-│       │   │           ├── PaymentService.java
-│       │   │           └── RabbitMQConfig.java
-│       └── resources
-│           └── application.yml  # 공통 설정 파일 참조
+│   ├── src
+│   │   └── main
+│   │       ├── java
+│   │       │   └── hello
+│   │       │       └── payment_service
+│   │       └── resources
+│   │           └── application.yml
+├── README.md
+└── application-common.yml     # 공통 설정 파일 (RabbitMQ, Eureka 등)
 ```
