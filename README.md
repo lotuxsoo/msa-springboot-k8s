@@ -1,9 +1,9 @@
 ## 프로젝트 구조
 ```
 .
+├── application-common.yml        # 모든 서비스가 참조하는 공통 설정 파일
 ├── README.md
-├── application-common.yml
-├── k8s
+├── k8s                           # Kubernetes 관련 파일
 │   ├── api-gateway
 │   │   ├── api-gateway-deployment.yml
 │   │   └── api-gateway-service.yml
@@ -31,7 +31,7 @@
 │       │   │       └── msa_api_gateway
 │       │   │           └── MsaApiGatewayApplication.java
 │       │   └── resources
-│       │       └── application.yml
+│       │       └── application.yml  # 공통 설정 파일 참조
 ├── msa-eureka-server
 │   ├── Dockerfile
 │   ├── build.gradle
@@ -45,7 +45,7 @@
 │       │   │       └── msa_eureka_server
 │       │   │           └── MsaEurekaServerApplication.java
 │       └── resources
-│           └── application.yml
+│           └── application.yml  # 공통 설정 파일 참조
 ├── msa-order-service
 │   ├── Dockerfile
 │   ├── build.gradle
@@ -62,7 +62,7 @@
 │       │   │           ├── OrderService.java
 │       │   │           └── RabbitMQConfig.java
 │       └── resources
-│           └── application.yml
+│           └── application.yml  # 공통 설정 파일 참조
 ├── msa-payment-service
 │   ├── Dockerfile
 │   ├── build.gradle
@@ -79,5 +79,5 @@
 │       │   │           ├── PaymentService.java
 │       │   │           └── RabbitMQConfig.java
 │       └── resources
-│           └── application.yml
+│           └── application.yml  # 공통 설정 파일 참조
 ```
