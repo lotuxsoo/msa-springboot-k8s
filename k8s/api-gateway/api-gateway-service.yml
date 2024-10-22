@@ -3,10 +3,9 @@ kind: Service
 metadata:
   name: api-gateway
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: api-gateway
   ports:
     - port: 80
       targetPort: 8080
-      nodePort: 30080  # 원하는 NodePort로 설정
